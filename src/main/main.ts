@@ -1,7 +1,7 @@
 import { isDev } from './../shared/isDev';
 import { envirmoments } from "../../config/env";
 import { BrowserWindow, app, } from "electron";
-import { join } from 'path'
+import { join, resolve } from 'path'
 import { format } from "url";
 import { enableLiveReload } from './helpers/renderer-reload';
 import createWindow from './helpers/window'
@@ -21,7 +21,7 @@ function createMainWindow() {
     height: 600,
     show: false,
   })
-  const index = join(__dirname, '/../../dist/renderer/index.html')
+  const index = resolve(__dirname, '../../dist/renderer/index.html')
 
   mainWindow.loadURL(format({
     pathname: index,
