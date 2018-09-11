@@ -9,5 +9,5 @@ import { ElectronService } from 'ngx-electron';
 export class AppComponent {
   constructor(private _electronService: ElectronService){
   }
-  title = 'app';
+  title = 'Reports app';
 }

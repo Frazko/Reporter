@@ -17,8 +17,8 @@ if (ENV.name === "development") {
 
 function createMainWindow() {
   mainWindow = createWindow("main", {
-    width: 800,
-    height: 600,
+    width: 520,
+    height: 880,
     show: false,
   })
   const index = resolve(__dirname, '../../dist/renderer/index.html')

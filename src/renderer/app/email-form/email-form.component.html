@@ -1,58 +1,62 @@
-<div class="example-container">
+<div class="container">
   <mat-card>
-    <mat-list>
-      <mat-list-item role="listitem">
-        <mat-form-field>
-          <mat-select placeholder="Select">
-            <mat-option value="option">Option</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </mat-list-item>
+    <form class="example-container">
+      <div class="emails-block">
+        <mat-card>
+          <p>
+            <mat-form-field>
+              <input matInput placeholder="Name from">
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <input matInput placeholder="Email">
+            </mat-form-field>
+          </p>
+
+        </mat-card>
+        <mat-card>
+          <p>
+            <mat-form-field>
+              <input matInput placeholder="Name to">
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <input matInput placeholder="Email">
+            </mat-form-field>
+          </p>
+
+        </mat-card>
+      </div>
 
 
-      <mat-list-item role="listitem">
-        <mat-form-field>
-          <input matInput placeholder="Input">
-        </mat-form-field>
-      </mat-list-item>
+      <mat-card>
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Subject">
+          </mat-form-field>
+        </p>
+        <p class="magic-item button">
+          <mat-form-field>
+            <input matInput placeholder="Status">
+          </mat-form-field>
 
-      <mat-list-item role="listitem">
-        <mat-form-field>
-          <textarea matInput placeholder="Textarea"></textarea>
-        </mat-form-field>
-      </mat-list-item>
-    </mat-list>
-
-    <p>
-      <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
-      </mat-form-field>
-    </p>
-
-
-
+          <button class="magic-button" mat-raised-button>Add!</button>
+        </p>
+      </mat-card>
+    </form>
 
 
     <p>
       <mat-form-field>
-        <mat-select placeholder="Select">
-          <mat-option value="option">Option</mat-option>
-        </mat-select>
+        <textarea rows="10" matInput placeholder="Report"></textarea>
       </mat-form-field>
     </p>
 
-    <p>
-      <mat-form-field>
-        <input matInput placeholder="Input">
-      </mat-form-field>
+    <p class="button">
+      <button mat-raised-button color="primary">Send</button>
     </p>
-    <p>
-      <mat-form-field>
-        <textarea matInput placeholder="Textarea"></textarea>
-      </mat-form-field>
-    </p>
+
   </mat-card>
 </div>

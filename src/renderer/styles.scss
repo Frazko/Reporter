@@ -1,12 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-.example-container {
+.container {
   display: flex;
   flex-direction: column;
 }
 
-.example-container > * {
+.container p * {
   width: 100%;
+}
+
+.mat-card {
+  margin: 15px;
+}
+
+.emails-block,
+.magic-item {
+  display: flex;
+  .mat-card {
+    width: 50%;
+  }
+}
+
+.magic-item {
+  justify-content: space-between;
+  .magic-button {
+    margin-left: 25px;
+  }
+}
+
+.button {
+  text-align: right;
+
+  button {
+    width: 100px;
+    height: 36px;
+  }
+}
+
+h1 {
+  font-family: Arial, serif;
+  font-size: 2em;
+}
+
+.report-area {
+  height: 60px;
 }
