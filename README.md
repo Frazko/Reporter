@@ -1,14 +1,25 @@
-# ElectronAngularBoilerplate
+# Electron-Angular-Material Boilerplate
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
+
+## Run and Work
+`npm i && npm start` and see the magic
+
+## Requirements
+-Electron: ^2.0.8
+-Angular: Cli: 6.2.1
+-Material: ^6.4.7
+
+
+
 
 ## Development server
-
+-Para probar fuera de electron ( --en browser)
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Generar componentes con `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`. zaz
 
 ## Build
 
