@@ -14,7 +14,8 @@ module.exports = env => {
     entry: {
       main: "./src/main/main.ts"
     },
-    target: "electron",
+    mode: 'development',
+    target: "electron-main",
     output: {
       path: path.resolve(__dirname, 'dist/main'),
       filename: '[name].js'

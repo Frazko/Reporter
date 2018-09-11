@@ -16,6 +16,8 @@
       "dom"
     ],
     "strict": true,
-    "strictNullChecks": false
-  },
+    "strictNullChecks": false,
+    "module": "es2015",
+    "baseUrl": "./"
+  }
 }
