@@ -42,6 +42,8 @@ import {
   MatPaginatorModule,
 } from '@angular/material/';
 
+import { StoreService } from '../services/store.service';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +54,7 @@ import {
     AppRoutingModule,
     NgxElectronModule,
     BrowserAnimationsModule,
+    FormsModule,
     // Material components
     MatCheckboxModule,
     MatButtonModule,
@@ -85,7 +88,7 @@ import {
     MatSortModule,
     MatPaginatorModule,
   ],
-  providers: [],
+  providers: [StoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

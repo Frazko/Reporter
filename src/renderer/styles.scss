@@ -10,6 +10,9 @@
 .container p * {
   width: 100%;
 }
+#main-container {
+  padding: 0;
+}
 
 .mat-card {
   margin: 15px;
@@ -34,16 +37,36 @@
   text-align: right;
 
   button {
-    width: 100px;
-    height: 36px;
+    width: 50px;
+    height: 50px;
+    margin: 15px;
   }
-}
-
-h1 {
-  font-family: Arial, serif;
-  font-size: 2em;
 }
 
 .report-area {
   height: 60px;
+}
+
+.textarea {
+  margin: 25px 15px 0 15px;
+
+}
+
+
+// Material styles override
+
+mat-card-header {
+  background: rgba(0,0,0,.10);
+  padding: 15px;
+}
+
+mat-card-title {
+  color: rgba(0,0,0,.60);
+  font-family: Arial, serif;
+  font-size: 2em !important;
+}
+
+mat-card-subtitle {
+  font-family: Arial, serif;
+  font-size: 1.3em;
 }

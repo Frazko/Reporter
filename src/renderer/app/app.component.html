@@ -1,10 +1,11 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    {{ title }}
-  </h1>
- </div>
+<h1>{{message}}</h1>
+<email-form
+[reporterName]="userData.reporterName"
+[reporterEmail]="userData.reporterEmail"
+[receiverName]="userData.receiverName"
+[receiverEmail]="userData.receiverEmail"
 
-<email-form ></email-form>
+(childEvent)="onSave($event)">
+</email-form>
 
 <router-outlet></router-outlet>

@@ -18,6 +18,7 @@
     "strict": true,
     "strictNullChecks": false,
     "module": "es2015",
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "noImplicitAny": false
   }
 }

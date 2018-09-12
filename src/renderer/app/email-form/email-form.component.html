@@ -1,62 +1,77 @@
 <div class="container">
-  <mat-card>
-    <form class="example-container">
-      <div class="emails-block">
+  <mat-card id="main-container">
+    <mat-card-header>
+      <mat-card-title>Reports {{unot}}</mat-card-title>
+      <mat-card-subtitle>Send Email report</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form class="example-container">
+        <div class="emails-block">
+          <mat-card>
+
+            <mat-card-header>
+              <mat-card-subtitle>Reporter</mat-card-subtitle>
+            </mat-card-header>
+            <p>
+              <mat-form-field>
+                <input name="reporterName" matInput placeholder="Name" [(ngModel)]="reporterName">
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field>
+                <input name="reporterEmail" matInput placeholder="Email" [(ngModel)]="reporterEmail">
+              </mat-form-field>
+            </p>
+
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              <mat-card-subtitle>Receiver</mat-card-subtitle>
+            </mat-card-header>
+            <p>
+              <mat-form-field>
+                <input name="receiverName" matInput placeholder="Name" [(ngModel)]="receiverName">
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field>
+                <input name="receiverEmail" matInput placeholder="Email" [(ngModel)]="receiverEmail">
+              </mat-form-field>
+            </p>
+
+          </mat-card>
+        </div>
+
+
         <mat-card>
           <p>
             <mat-form-field>
-              <input matInput placeholder="Name from">
+              <input matInput placeholder="Subject">
             </mat-form-field>
           </p>
-          <p>
+          <p class="magic-item button">
             <mat-form-field>
-              <input matInput placeholder="Email">
+              <input matInput placeholder="Status">
             </mat-form-field>
+            <button mat-mini-fab class="magic-button">
+              <mat-icon aria-label="">add</mat-icon>
+            </button>
           </p>
-
         </mat-card>
-        <mat-card>
-          <p>
-            <mat-form-field>
-              <input matInput placeholder="Name to">
-            </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field>
-              <input matInput placeholder="Email">
-            </mat-form-field>
-          </p>
-
-        </mat-card>
-      </div>
+      </form>
+      <mat-divider></mat-divider>
+      <p class="textarea">
+        <mat-form-field>
+          <textarea rows="10" matInput placeholder="Report"></textarea>
+        </mat-form-field>
+      </p>
 
 
-      <mat-card>
-        <p>
-          <mat-form-field>
-            <input matInput placeholder="Subject">
-          </mat-form-field>
-        </p>
-        <p class="magic-item button">
-          <mat-form-field>
-            <input matInput placeholder="Status">
-          </mat-form-field>
-
-          <button class="magic-button" mat-raised-button>Add!</button>
-        </p>
-      </mat-card>
-    </form>
-
-
-    <p>
-      <mat-form-field>
-        <textarea rows="10" matInput placeholder="Report"></textarea>
-      </mat-form-field>
-    </p>
-
-    <p class="button">
-      <button mat-raised-button color="primary">Send</button>
-    </p>
+    </mat-card-content>
 
   </mat-card>
+  <p class="button">
+    <button (click)="sendData()" mat-raised-button color="primary">Send</button>
+  </p>
 </div>
