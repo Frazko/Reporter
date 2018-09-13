@@ -1,0 +1,24 @@
+{
+  "date": "fecha",
+  "userData": {
+    "reporterName": "1",
+    "reporterEmail": "2",
+    "receiverName": "3",
+    "receiverEmail": "4"
+  },
+  "status": [{
+      "a": {
+        "1": "xxxxxxxxx",
+        "2": "xxxxxxxxx",
+        "3": "xxxxxxxxx"
+      }
+    },
+    {
+      "b": {
+        "1": "xxxxxxxxx",
+        "2": "xxxxxxxxx",
+        "3": "xxxxxxxxx"
+      }
+    }
+  ]
+}
