@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxElectronModule } from "ngx-electron";
 import { EmailFormComponent } from './email-form/email-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -55,6 +56,7 @@ import { FormsModule } from '@angular/forms';
     NgxElectronModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     // Material components
     MatCheckboxModule,
     MatButtonModule,

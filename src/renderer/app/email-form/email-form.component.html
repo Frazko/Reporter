@@ -1,7 +1,7 @@
 <div class="container">
   <mat-card id="main-container">
     <mat-card-header>
-      <mat-card-title>Reports {{unot}}</mat-card-title>
+      <mat-card-title>Reports </mat-card-title>
       <mat-card-subtitle>Send Email report</mat-card-subtitle>
     </mat-card-header>
 
@@ -60,7 +60,7 @@
               <mat-form-field>
                 <input name="status" matInput placeholder="Status" [(ngModel)]="description">
               </mat-form-field>
-              <button (click)="buildData()" mat-mini-fab class="magic-button">
+              <button (click)="addStatus()" mat-mini-fab class="magic-button">
                 <mat-icon aria-label="">add</mat-icon>
               </button>
             </p>
@@ -71,7 +71,7 @@
       <p class="textarea">
         <mat-form-field>
           <textarea name="reportTextArea" id="reportTextArea" class="mat-display-1" rows="10" matInput placeholder="Report"
-            [(ngModel)]="report"></textarea>
+            [(ngModel)]="reportStatusArea"></textarea>
         </mat-form-field>
       </p>
 

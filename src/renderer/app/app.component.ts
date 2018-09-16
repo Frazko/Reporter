@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ElectronService } from 'ngx-electron';
 import { StoreService } from '../services/store.service';
-import { EmailFormComponent } from './email-form/email-form.component';
+import { UserData } from '../../common/types'
 
 @Component({
   selector: 'app-root',
@@ -9,33 +9,38 @@ import { EmailFormComponent } from './email-form/email-form.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public userData: object;
+  public userData: UserData;
 
   constructor(private _electronService: ElectronService, private persister: StoreService) { }
 
   ngOnInit() {
     console.log("--loading userData");
-    const userData = this.loadData("userData");
-    if (userData) {
+    this.userData = this.loadData("userData");
+    if (!this.userData) {
+      let userData: UserData;
+      userData.reporterName = '';
+      userData.reporterEmail = '';
+      userData.receiverName = '';
+      userData.receiverEmail = '';
       this.userData = userData;
-      console.log("si userData", this.userData);
     }
   }
 
   onSave(data) {
     console.log("onSave", data);
     this.saveData(data);
-    //this.loadData(event.key);
+    this.loadData(data.key);
   }
 
   saveData(data) {
-    console.log("saving data:: ",data);
+    console.log('TCL: AppComponent -> saveData -> data', data);
     this.persister.set(data.key, data.data);
+    //
   }
 
   loadData(key) {
     const data = this.persister.get(key);
-    console.log("loaded data:: ", data);
+    console.log('TCL: AppComponent -> loadData -> data', key, data);
     return data;
   }
 }
