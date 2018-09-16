@@ -5,7 +5,7 @@
   "main": "dist/main/main.js",
   "scripts": {
     "ng": "ng",
-    "start": "npm-run-all --parallel start:script watch:renderer",
+    "start": "ng serve",
     "start:script": "node ./start -c",
     "start:electron": "electron .",
     "watch": "npm-run-all --parallel watch:main watch:renderer ",

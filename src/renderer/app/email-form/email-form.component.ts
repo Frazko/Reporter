@@ -41,7 +41,7 @@ export class EmailFormComponent implements OnInit {
 
   addStatus() {
     this.initReport();
-    this.buildStatus()
+    this.buildStatus();
     this.buildReport();
 
     const userData = this.buildUserData();
@@ -51,12 +51,6 @@ export class EmailFormComponent implements OnInit {
   }
 
   sendData() {
-    /*
-    if ( this.repEmail.hasError('required') || this.emailFrom.hasError('required')){
-      this.openSnackBar("Please enter valid emails.");
-      return;
-    }
-    */
     this.initReport();
     this.postData();
   }
