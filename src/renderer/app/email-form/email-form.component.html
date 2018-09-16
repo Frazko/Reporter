@@ -6,12 +6,12 @@
     </mat-card-header>
 
     <mat-card-content>
-      <form class="example-container">
+      <form class="example-container" #reportForm="ngForm">
         <div class="padding-spacer emails-block">
           <mat-card class="userEmail">
 
             <mat-card-header>
-              <mat-card-title>Reporter</mat-card-title>
+              <mat-card-title>De</mat-card-title>
             </mat-card-header>
             <div class="padding-spacer">
               <p>
@@ -21,7 +21,8 @@
               </p>
               <p>
                 <mat-form-field>
-                  <input name="reporterEmail" matInput placeholder="Email" [(ngModel)]="reporterEmail">
+                  <input #repEmail="ngModel" id="repEmail" name="repEmail" matInput placeholder="Email" [(ngModel)]="reporterEmail"  email required>
+                  <mat-error *ngIf="repEmail.invalid">Valid Email required</mat-error>
                 </mat-form-field>
               </p>
             </div>
@@ -29,18 +30,19 @@
           </mat-card>
           <mat-card class="userEmail">
             <mat-card-header>
-              <mat-card-title>Receiver</mat-card-title>
+              <mat-card-title>Para</mat-card-title>
             </mat-card-header>
 
             <div class="padding-spacer">
               <p>
                 <mat-form-field>
-                  <input name="receiverName" matInput placeholder="Name" [(ngModel)]="receiverName">
+                  <input name="receiverName" matInput placeholder="Name" [(ngModel)]="receiverName" required>
                 </mat-form-field>
               </p>
               <p>
                 <mat-form-field>
-                  <input name="receiverEmail" matInput placeholder="Email" [(ngModel)]="receiverEmail">
+                  <input #recEmail="ngModel" id="recEmail" name="recEmail" matInput placeholder="Email" [(ngModel)]="receiverEmail" email required>
+                  <mat-error *ngIf="recEmail.invalid">Valid Email required</mat-error>
                 </mat-form-field>
               </p>
             </div>
@@ -80,6 +82,6 @@
 
   </mat-card>
   <p class="send-btn">
-    <button (click)="sendData()" mat-raised-button color="primary">Send  <mat-icon aria-label="">send</mat-icon></button>
+    <button (click)="sendData()" mat-raised-button color="primary" [disabled]="!reportForm.form.valid">Send  <mat-icon aria-label="">send</mat-icon></button>
   </p>
 </div>

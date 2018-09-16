@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import {FormControl, Validators, FormGroup} from '@angular/forms';
 import {MatSnackBar} from '@angular/material';
 import { Report } from '../../../common/types'
 
@@ -11,7 +12,6 @@ import { Report } from '../../../common/types'
 
 export class EmailFormComponent implements OnInit {
   @Output() public childEvent = new EventEmitter();
-
   @Input() public reporterName: string;
   @Input() public reporterEmail: string;
   @Input() public receiverName: string;
@@ -25,12 +25,14 @@ export class EmailFormComponent implements OnInit {
   public status: Array<object> = [];
   public report: Report = new Report();
 
+
   constructor(private http: HttpClient, public snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
     // feo feo feo
     this.initReport();
+    //
   }
 
   initReport() {
@@ -49,6 +51,12 @@ export class EmailFormComponent implements OnInit {
   }
 
   sendData() {
+    /*
+    if ( this.repEmail.hasError('required') || this.emailFrom.hasError('required')){
+      this.openSnackBar("Please enter valid emails.");
+      return;
+    }
+    */
     this.initReport();
     this.postData();
   }
