@@ -65,7 +65,10 @@
                 <input name="status" matInput placeholder="Status" [(ngModel)]="description">
               </mat-form-field>
               <button (click)="addStatus()" mat-mini-fab class="magic-button">
-                <mat-icon aria-label="">add</mat-icon>
+                <mat-icon
+                matTooltip="Add many status by subject."
+                matTooltipPosition="above"
+                aria-label="">add</mat-icon>
               </button>
             </p>
           </mat-card>
