@@ -16,12 +16,13 @@
             <div class="padding-spacer">
               <p>
                 <mat-form-field>
-                  <input name="reporterName" matInput placeholder="Name" [(ngModel)]="reporterName">
+                  <input name="reporterName" matInput placeholder="Name" [(ngModel)]="reporterName" required>
                 </mat-form-field>
               </p>
               <p>
                 <mat-form-field>
-                  <input #repEmail="ngModel" id="repEmail" name="repEmail" matInput placeholder="Email" [(ngModel)]="reporterEmail"  email required>
+                  <input #repEmail="ngModel" id="repEmail" name="repEmail" matInput placeholder="Email" [(ngModel)]="reporterEmail"
+                    email required>
                   <mat-error *ngIf="repEmail.invalid">Valid Email required</mat-error>
                 </mat-form-field>
               </p>
@@ -41,7 +42,8 @@
               </p>
               <p>
                 <mat-form-field>
-                  <input #recEmail="ngModel" id="recEmail" name="recEmail" matInput placeholder="Email" [(ngModel)]="receiverEmail" email required>
+                  <input #recEmail="ngModel" id="recEmail" name="recEmail" matInput placeholder="Email" [(ngModel)]="receiverEmail"
+                    email required>
                   <mat-error *ngIf="recEmail.invalid">Valid Email required</mat-error>
                 </mat-form-field>
               </p>
@@ -82,6 +84,9 @@
 
   </mat-card>
   <p class="send-btn">
-    <button (click)="sendData()" mat-raised-button color="primary" [disabled]="!reportForm.form.valid">Send  <mat-icon aria-label="">send</mat-icon></button>
+    <mat-progress-spinner *ngIf="isSending" mode="indeterminate"> </mat-progress-spinner>
+    <button *ngIf="!isSending"  (click)="sendData()" mat-raised-button color="primary" [disabled]="!reportForm.form.valid || isSending">Send
+      <mat-icon aria-label="">send</mat-icon>
+    </button>
   </p>
 </div>

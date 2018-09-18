@@ -17,7 +17,7 @@ export class AppComponent {
     console.log("--loading userData");
     this.userData = this.loadData("userData");
     if (!this.userData) {
-      let userData: UserData;
+      let userData: UserData = {} as UserData;
       userData.reporterName = '';
       userData.reporterEmail = '';
       userData.receiverName = '';

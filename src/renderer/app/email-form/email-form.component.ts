@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import {FormControl, Validators, FormGroup} from '@angular/forms';
 import {MatSnackBar} from '@angular/material';
 import { Report } from '../../../common/types'
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'email-form',
@@ -17,6 +17,7 @@ export class EmailFormComponent implements OnInit {
   @Input() public receiverName: string;
   @Input() public receiverEmail: string;
 
+  public isSending: boolean = false;
   public subject: string = "";
   public description: string = "";
   public reportStatusArea: string = "";
@@ -26,7 +27,16 @@ export class EmailFormComponent implements OnInit {
   public report: Report = new Report();
 
 
-  constructor(private http: HttpClient, public snackBar: MatSnackBar) {
+  constructor(private http: HttpClient, public snackBar: MatSnackBar, breakpointObserver: BreakpointObserver) {
+    breakpointObserver.observe([
+      Breakpoints.HandsetPortrait
+    ]).subscribe(result => {
+      if (result.matches) {
+       // this.activateHandsetLayout();
+       console.log("media query",result);
+
+      }
+    });
   }
 
   ngOnInit() {
@@ -65,6 +75,7 @@ export class EmailFormComponent implements OnInit {
       Subject
       Message
     */
+    this.isSending=true;
     console.log("POSTING DATA");
     const payload = {
       "nameFrom": this.report.userData.reporterName,
@@ -84,6 +95,7 @@ export class EmailFormComponent implements OnInit {
         res => {
           console.log("POST Request is successful ", res);
           this.openSnackBar("Report Sent Successfully");
+          this.isSending=false;
         },
         (err: HttpErrorResponse) => {
           console.log(err.error);
@@ -91,6 +103,7 @@ export class EmailFormComponent implements OnInit {
           console.log(err.message);
           console.log(err.status);
           this.openSnackBar("Report NOT Sent, [Error: "+err.error.error+"]");
+          this.isSending=false;
         }
       );
   }

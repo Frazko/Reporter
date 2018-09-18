@@ -10,6 +10,7 @@
 .container p * {
   width: 100%;
 }
+
 #main-container {
   padding: 0;
 }
@@ -21,6 +22,7 @@
 .emails-block,
 .magic-item {
   display: flex;
+
   .mat-card {
     width: 50%;
   }
@@ -28,6 +30,7 @@
 
 .magic-item {
   justify-content: space-between;
+
   .magic-button {
     margin-left: 25px;
   }
@@ -35,7 +38,6 @@
 
 
 .add-btn {
-  margin: 15px;
   button {
     width: 50px;
     height: 50px;
@@ -43,17 +45,19 @@
 }
 
 .send-btn {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
   margin: 15px;
+
   button {
     width: auto;
     height: 50px;
     text-align: center;
+
     mat-icon {
       width: 20px;
       height: 28px;
       margin-left: 10px
-
     }
   }
 }
@@ -67,22 +71,24 @@
 }
 
 #reportTextArea {
-	line-height:30px;
+  line-height: 30px;
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
 }
 
-label.mat-form-field-label { /* Chrome/Opera/Safari */
+label.mat-form-field-label {
+  /* Chrome/Opera/Safari */
   font-family: 'Montserrat', sans-serif !important;
 }
 
 // Material styles override
 
 mat-card-header {
-  background: rgba(0,0,0,.10);
+  background: rgba(0, 0, 0, .10);
   padding: 15px;
 }
-.padding-spacer{
+
+.padding-spacer {
   padding: 15px;
 }
 
@@ -107,7 +113,23 @@ mat-card-title {
 }
 
 mat-card-subtitle {
-  color: rgba(0,0,0,.80);
+  color: rgba(0, 0, 0, .80);
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5em;
+}
+
+
+/* Using SCSS variables to store breakpoints */
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 600px;
+
+@media (max-width: $breakpoint-mobile) {
+  .emails-block {
+    display: flex;
+    flex-direction: column;
+
+    .mat-card {
+      width: inherit;
+    }
+  }
 }
